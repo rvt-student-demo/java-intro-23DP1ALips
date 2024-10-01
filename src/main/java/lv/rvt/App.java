@@ -6,13 +6,15 @@ public class App
 
 {
     public static void main( String[] args ) {
-        printUntilNumber(5);
+        divisibleByThree(3, 6);
     }
-    
-    public static void printUntilNumber(int number) {
-        while (number >= 1) {
-        System.out.println(number);
-        number--;
+
+    public static void divisibleByThree(int beggining, int end) {
+        while (beggining <= end) {
+            if (beggining % 3 == 0) {
+                System.out.println(beggining);
+            }
+            beggining++;
         }
     }
 }
