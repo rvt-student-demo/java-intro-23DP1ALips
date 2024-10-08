@@ -4,40 +4,32 @@ public class App
 
 {
     public static void printStars(int number) {
-        int i = 0;
-        while (i < number) {
+        for (int i = 1; i <= number; i++) {
             System.out.print('*');
-        i++;
         }
         System.out.println();
     }
 
     public static void printSquare(int size) {
-        int i = 0;
-        while (i < size) {
+        for (int i = 0; i < size; i++){
             printStars(size);
-        i++;
         }
     }
 
     public static void printRectangle(int width, int height) {
-        int i = 0;
-        while (i < height) {
+        for (int i = 1; i <= height; i++) {
             printStars(width);
-        i++;
         }
     }
 
     public static void printTriangle(int size) {
-        int i = 0;
-        while (i <= size) {
+        for (int i = 1; i <= size; i++) {
             printStars(i);
-        i++;
         }
         System.out.println();
     }
     
     public static void main(String[] args) {
-        printTriangle(4);
+        printSquare(2);
     }
 }
