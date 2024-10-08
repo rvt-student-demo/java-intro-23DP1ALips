@@ -1,20 +1,43 @@
 package lv.rvt;
 
-import java.util.Scanner;
-
 public class App
 
 {
-    public static void main( String[] args ) {
-        divisibleByThree(3, 6);
+    public static void printStars(int number) {
+        int i = 0;
+        while (i < number) {
+            System.out.print('*');
+        i++;
+        }
+        System.out.println();
     }
 
-    public static void divisibleByThree(int beggining, int end) {
-        while (beggining <= end) {
-            if (beggining % 3 == 0) {
-                System.out.println(beggining);
-            }
-            beggining++;
+    public static void printSquare(int size) {
+        int i = 0;
+        while (i < size) {
+            printStars(size);
+        i++;
         }
+    }
+
+    public static void printRectangle(int width, int height) {
+        int i = 0;
+        while (i < height) {
+            printStars(width);
+        i++;
+        }
+    }
+
+    public static void printTriangle(int size) {
+        int i = 0;
+        while (i <= size) {
+            printStars(i);
+        i++;
+        }
+        System.out.println();
+    }
+    
+    public static void main(String[] args) {
+        printTriangle(4);
     }
 }
