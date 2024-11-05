@@ -19,6 +19,15 @@ public class Person {
             this.age ++;
         }
     }
+
+    public String getName() {
+        return this.name;
+    }
+    
+    public boolean isOfLegalAge() {
+        return this.age <= 18;
+    }
+
     // the added method
     public int returnAge() {
         return this.age;
