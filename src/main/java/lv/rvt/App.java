@@ -1,31 +1,16 @@
 package lv.rvt;
 import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Statistics allNumbers = new Statistics();
-        Statistics evenNumbers = new Statistics();
-        Statistics oddNumbers = new Statistics();
+        PaymentCard card = new PaymentCard(50);
+        System.out.println(card);
+        
+        card.eatAffordably();
+        System.out.println(card);
 
-        System.out.println("Enter numbers:");
-
-        while (true) {
-            int number = Integer.valueOf(scanner.nextLine());
-            if (number == -1) {
-                break;
-            }
-            
-            allNumbers.addNumber(number);
-
-            if (number % 2 == 0) {
-                evenNumbers.addNumber(number);
-            } else {
-                oddNumbers.addNumber(number);
-            }
-        }
-
-        System.out.println("Sum: " + allNumbers.sum());
-        System.out.println("Sum of even numbers: " + evenNumbers.sum());
-        System.out.println("Sum of odd numbers: " + oddNumbers.sum());
+        card.eatHeartily();
+        card.eatAffordably();
+        System.out.println(card);
     }
 }
