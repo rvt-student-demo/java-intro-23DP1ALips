@@ -6,12 +6,11 @@ public class Statistics {
     private int num;
 
     public Statistics() {
-        
     }
 
     public void addNumber(int number) {
-        count++;
         this.num = number;
+        count++;
         sum += this.num;
     }
 
@@ -24,7 +23,7 @@ public class Statistics {
     }
 
     public double average() {
-        double avg = this.sum / (this.count * 1.00);
-        return avg;
+        double average = this.sum / (this.count * 1.0);
+        return average;
     }
 }
