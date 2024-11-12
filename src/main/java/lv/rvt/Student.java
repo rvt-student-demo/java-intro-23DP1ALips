@@ -9,6 +9,6 @@ public class Student {
     }
 
     public void play() {
-        this.credits -= 8;
+        this.credits = this.credits - 8;
     }          
 }
