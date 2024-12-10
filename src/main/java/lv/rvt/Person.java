@@ -6,6 +6,7 @@ public class Person {
     private int weight; 
     private int height; 
     
+    // All args constructor
     public Person(String name, int age, int weight, int height) { 
         this.name = name; 
         this.age = age; 
@@ -13,20 +14,20 @@ public class Person {
         this.height = height; 
     } 
     
+    // Second constructor with only one parameter
     public Person(String name) {
+        // this(name, 0, 0, 0);
         this.name = name;
         this.age = 0;
         this.weight = 0;
         this.height = 0;
     }
-
     public Person(String name, String age, String weight, String height){
         this.name = name;
         this.age = Integer.valueOf(age);
         this.weight = Integer.valueOf(weight);
         this.height = Integer.valueOf(height);
     }
-
     public void growOlder() {
         this.age = this.age + 1;
     }
@@ -38,7 +39,6 @@ public class Person {
     public boolean isOfLegalAge() { 
         return this.age <= 18; 
     } 
-
     @Override 
     public String toString() { 
         return this.name + ", age " + this.age + " years"; 
