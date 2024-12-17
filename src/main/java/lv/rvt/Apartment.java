@@ -10,13 +10,20 @@ public class Apartment {
         this.squares = squares;
         this.pricePerSquare = pricePerSquare;
     }
+
     public boolean largerThan(Apartment compared){
         if (compared.getSquares() <= this.getSquares()) {
             return true;
         } 
         return false;
     }
+    public int priceDifference(Apartment compared) {
+        return Math.abs(compared.getPrice() - this.getPrice());
+    }
     public int getSquares() {
         return this.squares;
+    }
+    public int getPrice() {
+        return this.squares * this.pricePerSquare;
     }
 }
