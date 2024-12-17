@@ -1,10 +1,12 @@
-package lv.rvt; 
- 
+package lv.rvt;
+
+
 public class Person { 
     private String name; 
     private int age; 
     private int weight; 
     private int height; 
+    private SimpleDate birthday;
     
     // All args constructor
     public Person(String name, int age, int weight, int height) { 
@@ -22,12 +24,19 @@ public class Person {
         this.weight = 0;
         this.height = 0;
     }
+
+    public Person(String name, SimpleDate date) {
+        this.name = name;
+        this.birthday = date;
+    }
+
     public Person(String name, String age, String weight, String height){
         this.name = name;
         this.age = Integer.valueOf(age);
         this.weight = Integer.valueOf(weight);
         this.height = Integer.valueOf(height);
     }
+
     public void growOlder() {
         this.age = this.age + 1;
     }
@@ -39,6 +48,7 @@ public class Person {
     public boolean isOfLegalAge() { 
         return this.age <= 18; 
     } 
+
     @Override 
     public String toString() { 
         return this.name + ", age " + this.age + " years"; 
