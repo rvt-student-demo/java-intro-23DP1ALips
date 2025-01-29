@@ -17,5 +17,8 @@ public class App {
         System.out.println(box1);
         Box box2 = new Box(7);
         System.out.println(box2.nests(box1));
+        Engine engine = new Engine("combustion", "hz", "volkswagen", "VW GOLF 1L 86-91");
+        System.out.println(engine.getEngineType());
+        System.out.println(engine.getManufacturer());
     }
 }
