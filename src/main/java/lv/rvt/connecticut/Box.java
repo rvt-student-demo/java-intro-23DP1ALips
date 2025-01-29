@@ -13,13 +13,12 @@ public class Box {
         this.width = side;
         this.height = side;
     }
-
+    
     public Box( Box oldBox ){
         this.length = oldBox.length();
         this.width = oldBox.width();
         this.height = oldBox.height();
     }
-
     public double volume(){
         return this.length * this.width * this.height;
     }
@@ -47,16 +46,29 @@ public class Box {
     public double getSideArea(){
         return sideArea();
     }
-
     public double length(){
         return this.length;
     }
-
     public double height(){
         return this.height;
     }
-
     public double width(){
         return this.width;
+    }
+
+    public Box biggerBox( Box oldBox ){
+        return new Box(1.25*oldBox.length(), 1.25*oldBox.width(), 1.25*oldBox.height());
+    }
+
+    public Box smallerBox( Box oldBox ){
+        return new Box(0.75*oldBox.length(), 0.75*oldBox.width(), 0.75*oldBox.height());
+    }
+
+    public boolean nests( Box outsideBox ){
+        if(outsideBox.length() > this.length() && outsideBox.width() > this.width() && outsideBox.height() > this.height()){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
