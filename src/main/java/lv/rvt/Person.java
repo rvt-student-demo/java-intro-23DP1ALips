@@ -1,21 +1,21 @@
 package lv.rvt;
-
-
 public class Person { 
     private String name; 
     private int age; 
     private int weight; 
     private int height; 
     private SimpleDate birthday;
-    
+    private String address;
+
     // All args constructor
-    public Person(String name, int age, int weight, int height) { 
+    public Person(String name, int age, int weight, int height, String address) { 
         this.name = name; 
         this.age = age; 
         this.weight = weight; 
         this.height = height; 
+        this.address = address;
     } 
-    
+
     // Second constructor with only one parameter
     public Person(String name) {
         // this(name, 0, 0, 0);
@@ -24,12 +24,10 @@ public class Person {
         this.weight = 0;
         this.height = 0;
     }
-
     public Person(String name, SimpleDate date) {
         this.name = name;
         this.birthday = date;
     }
-
     public Person(String name, String age, String weight, String height){
         this.name = name;
         this.age = Integer.valueOf(age);
@@ -37,6 +35,9 @@ public class Person {
         this.height = Integer.valueOf(height);
     }
 
+    public Person(String name, String address){
+        this(name, 0, 0, 0, address);
+    }
     public void growOlder() {
         this.age = this.age + 1;
     }
@@ -50,10 +51,10 @@ public class Person {
     } 
 
     @Override 
-    public String toString() { 
-        return this.name + ", age " + this.age + " years"; 
+    public String toString() {  
+        return this.name + "\n\t" + this.address;
     } 
-     
+
     public void printPerson() { 
         System.out.println(this.name + ", age " + this.age + " years"); 
     } 
@@ -76,7 +77,6 @@ public class Person {
     public String toCsvRow() {
         return this.name + ", " + this.age + ", " + this.weight + ", " + this.height;
     }
-
     // Person getter
     public String getName() {
         return this.name + "'s";
